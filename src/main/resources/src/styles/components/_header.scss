@@ -1,0 +1,16 @@
+.header {
+  background: $dark-blue;
+  font-size: $font-size-small;
+}
+
+.header__title {
+  color: white;
+  text-decoration: none;
+  padding: 0.1rem;
+}
+
+@media ( max-width: $desktop-breakpoint){
+  .header button {
+    font-size: $m-size - 0.06rem;
+  }
+}

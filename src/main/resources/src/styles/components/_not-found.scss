@@ -1,0 +1,10 @@
+.not-found {
+    align-items: center;
+    background: url('/images/not-found-background.jpg');
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+    color: $dark-blue;
+}

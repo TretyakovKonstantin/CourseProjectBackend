@@ -15,18 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-/**
- * Aspect whose goal is to check automatically that methods
- * having a @ApiKeySecured annotation are correctly accessed
- * by users having a valid API Key (JWT).
-
- * A check against the user service is done to find the user
- * having the api key passed as request header/parameter.
-
- * If the API Key is valid the annotated method is executed,
- * otherwise the response is set with an UNAUTHORIZED status and the annotated
- * method is not executed.
- */
 @Aspect
 @Component
 class ApiKeySecuredAspect(@Autowired val userService: UserService) {

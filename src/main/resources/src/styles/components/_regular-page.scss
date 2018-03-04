@@ -1,0 +1,77 @@
+.regular-page {
+  background: url('/images/castle.jpg') no-repeat fixed center;
+  background-size: cover;
+  align-items: center;
+  height:100%;
+  min-height:100vh;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  padding:$s-size;
+}
+
+.regular-page__title {
+  alignment: center;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.regular-page__plain-text {
+  background: rgba($dark-blue, 0.7);
+  font-size: 2rem;
+  color: $off-white;
+  width: 80vw;
+  position: center;
+  padding: $xl-size;
+  margin: $s-size auto;
+}
+
+.regular-page__plain-text a:hover {
+  text-decoration: underline;
+  color: rgba(hotpink, 0.8);
+}
+
+.items-list {
+  float: left;
+  left: $s-size;
+  display: flex;
+  width: 25vw;
+  flex-direction: column;
+}
+
+.items-list li {
+  text-align: start;
+}
+
+.regular-page__main-content {
+  align-items: center;
+  align-content: center;
+  position: sticky;
+  width: 70vw;
+  float: right;
+  right: $s-size;
+}
+
+@media (max-width: $desktop-breakpoint){
+  .items-list {
+    width: 40vw;
+  }
+
+  .regular-page__main-content {
+    width: 53vw;
+  }
+}
+
+@media (max-width: $tablet-breakpoint){
+  .items-list {
+    width: 90vw;
+    float: none;
+  }
+
+  .regular-page__main-content {
+    width: 90vw;
+    float: bottom;
+    right: unset;
+  }
+}

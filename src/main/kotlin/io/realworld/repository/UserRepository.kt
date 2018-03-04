@@ -1,5 +1,6 @@
 package io.realworld.repository
 
+import io.realworld.model.Group
 import io.realworld.model.User
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository

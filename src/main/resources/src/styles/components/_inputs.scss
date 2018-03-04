@@ -1,0 +1,56 @@
+.text-input {
+  height: 50px;
+  font-size: $font-size-large;
+  font-weight: 300;
+  width: 25vw;
+  padding: $s-size;
+  background: rgba($dark-blue, 0.85);
+  color: white;
+}
+
+.select {
+  @extend .text-input;
+}
+
+.textarea {
+  @extend .text-input;
+  height: 10rem;
+  resize: none;
+}
+
+.note-textarea {
+  @extend .textarea;
+  background: $off-white;
+  color: $dark-blue;
+  width: 65vw;
+}
+
+.note-text-input {
+  @extend .text-input;
+  background: $off-white;
+  color: $dark-blue;
+  width: 65vw;
+}
+
+.ui-dropdown-label {
+  @extend .text-input
+}
+
+.ui-inputtext {
+  @extend .text-input;
+  border-radius: 0;
+}
+
+.ui-dropdown-trigger {
+  @extend .text-input
+}
+
+
+@media (max-width: $tablet-breakpoint) {
+  .ui-dropdown {
+    width: 60vw !important;
+  }
+  .ui-dropdown-label {
+    font-size: $m-size;
+  }
+}

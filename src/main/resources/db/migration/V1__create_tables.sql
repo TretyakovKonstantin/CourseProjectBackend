@@ -1,6 +1,6 @@
 CREATE TABLE users (
   id       SERIAL PRIMARY KEY,
-  token VARCHAR(255),
+  token    VARCHAR(255),
   username VARCHAR(255) UNIQUE,
   password VARCHAR(255),
   email    VARCHAR(255) UNIQUE,
@@ -10,8 +10,8 @@ CREATE TABLE users (
 
 INSERT INTO users VALUES ('1', 'Lucy', 'Lucy', 'lucy@mail.ru', 'Lucy');
 
-CREATE TABLE groups (
-  id   VARCHAR(255) PRIMARY KEY,
+CREATE TABLE "group" (
+  id   SERIAL PRIMARY KEY,
   name VARCHAR(255) UNIQUE
 );
 
@@ -49,7 +49,7 @@ CREATE TABLE note (
 INSERT INTO note VALUES ('1', '1', 'Rifleman''s creed', 'This is my rifle. There are many like it, but this one is mine.
 My rifle is my best friend. It is my life. I must master it as I must master my life.
 Without me, my rifle is useless. Without my rifle, I am useless. I must fire my rifle true. ' ||
-                                                         'I must shoot straighter than my enemy who is trying to kill me. I must shoot him before he shoots me. I will…');
+                                                        'I must shoot straighter than my enemy who is trying to kill me. I must shoot him before he shoots me. I will…');
 
 CREATE TABLE article (
   id          VARCHAR(255) PRIMARY KEY,

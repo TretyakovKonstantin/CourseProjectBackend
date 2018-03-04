@@ -24,15 +24,9 @@ class NoteTests {
     private var repository: NoteRepository? = null
     private var userRepository: UserRepository? = null
     private var userService: UserService? = null
+    private var note: Note? = null
 
     private val user = getRandomUser()
-
-    @Before
-    fun before() {
-        userRepository?.delete(user)
-        repository!!.save(Note("Hello World", "We want to thank you", user))
-    }
-
 
     private final fun getRandomUser(): User {
         var name = ""
@@ -46,6 +40,14 @@ class NoteTests {
                 "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTk2NDg0NzMsInN1YiI6ImFzZGZAbWFpbC5ydSIsImlzcyI6IktvdGxpbiZTcHJpbmciLCJleHAiOjE1MjA1MTI0NzN9.ihDzGLU-1kUY1CEa80a-xZiFPYYZbTk-tW43fR6J_-w",
                 name)
     }
+
+    @Before
+    fun before() {
+        userRepository?.delete(user)
+        note = Note("Hello World", "We want to thank you", user)
+        repository!!.save(note)
+    }
+
 
     @Test
     fun testFindAll() {
@@ -64,5 +66,12 @@ class NoteTests {
         val userNotes = repository!!.findAllByUser(user)
         Assert.assertTrue(!userNotes.isEmpty())
         Assert.assertTrue(userNotes[0].user == user)
+    }
+
+    @Test
+    fun testRemoveById() {
+        val noteToRemove = repository!!.findByTitle(note!!.title)[0]
+        repository!!.removeById(noteToRemove.id)
+        Assert.assertFalse(repository!!.findById(noteToRemove.id).isPresent)
     }
 }

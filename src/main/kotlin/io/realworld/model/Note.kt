@@ -1,11 +1,13 @@
 package io.realworld.model
 
+import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.annotation.JsonRootName
 import org.hibernate.annotations.Cascade
 import org.hibernate.annotations.CascadeType
-import java.time.OffsetDateTime
 import javax.persistence.*
 
 @Entity
+@JsonRootName("note")
 data class Note(var title: String = "",
                 var body: String = "",
                 @ManyToOne(fetch = FetchType.LAZY)

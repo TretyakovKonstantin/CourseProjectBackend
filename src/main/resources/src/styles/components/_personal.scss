@@ -1,0 +1,30 @@
+.personal-image {
+  width: 20rem;
+  height: 20rem;
+}
+
+.personal-info {
+   text-align: center;
+    width: 70vw;
+    float: right;
+  font-size: $l-size * 0.7;
+}
+
+@media (max-width: $desktop-breakpoint){
+  .personal-info {
+    width: 53vw;
+    font-size: $l-size * 0.6;
+  }
+}
+
+@media (max-width: $tablet-breakpoint){
+  .personal-image {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .personal-info {
+    float: bottom;
+    width: 90vw;
+  }
+}
